@@ -302,3 +302,26 @@ nav a{padding:.5rem .45rem;font-size:.8rem}
 @media(max-width:760px){.cg{grid-template-columns:minmax(0,1fr)}.cg>*{min-width:0}}
 @media(max-width:340px){.logo{display:none}header.top nav{width:100%;justify-content:space-between}nav a{padding:.5rem .4rem}}
 @media(max-width:760px){.soc{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== Kartu ID & tali (lanyard): tampilan + responsif ===== */
+.lan{--bw:clamp(136px,40vw,200px);--sw:clamp(17px,4.6vw,22px)}
+.lan::before{content:"";position:absolute;top:-5px;left:50%;width:calc(var(--sw) + 12px);height:11px;margin-left:calc((var(--sw) + 12px)/-2);border-radius:6px;z-index:3;
+background:linear-gradient(180deg,#f4f4f6,#8b8b92 55%,#c9c9ce);box-shadow:0 2px 6px rgba(0,0,0,.6)}
+.lan i{position:relative;width:var(--sw);height:clamp(70px,13vh,120px);border:0;border-radius:2px;
+background:
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='170'%3E%3Ctext transform='translate(15 85) rotate(-90)' text-anchor='middle' font-family='Arial,sans-serif' font-size='6.5' font-weight='700' textLength='150' lengthAdjust='spacingAndGlyphs' fill='%23ffffff' fill-opacity='.6'%3EARI JULIANTO %C2%B7 IT DEVELOPER %C2%B7%3C/text%3E%3C/svg%3E") 0 0/100% auto repeat-y,
+repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 2px,transparent 2px 5px),
+linear-gradient(90deg,#0c0c0e,#2a2a30 50%,#0c0c0e);
+box-shadow:inset 2px 0 0 rgba(255,255,255,.4),inset -2px 0 0 rgba(255,255,255,.4),0 0 14px rgba(0,0,0,.5)}
+.lan i::before{content:"";position:absolute;inset:0 4px;border-left:1px dashed rgba(255,255,255,.35);border-right:1px dashed rgba(255,255,255,.35)}
+.badge{width:var(--bw,170px);border-width:5px;border-radius:16px;padding:.6rem .6rem .7rem;position:relative;
+background:linear-gradient(165deg,#1d1d22,#000 62%);box-shadow:0 18px 40px rgba(0,0,0,.65),0 0 0 1px #333}
+.badge::before{content:"";position:absolute;top:-31px;left:50%;width:26px;height:42px;margin-left:-13px;border-radius:7px 7px 4px 4px;z-index:2;
+background:radial-gradient(circle at 50% 32%,#0a0a0b 0 3.5px,transparent 4.5px),linear-gradient(90deg,#85858d,#f6f6f8 45%,#9a9aa2);box-shadow:0 3px 6px rgba(0,0,0,.55)}
+.badge::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.11) 48%,transparent 60%)}
+.badge .ph{border-radius:10px}
+.badge span::after{content:"";display:block;height:14px;margin:.6rem auto 0;width:78%;opacity:.75;
+background:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 4px,#fff 4px 5px,transparent 5px 8px)}
+@media(max-width:760px){.lan i{height:76px}.badge b{font-size:.85rem}.badge span{font-size:.7rem}.badge span::after{height:11px;margin-top:.45rem}}
+@media(max-height:560px) and (min-width:761px){.lan{--bw:150px}.lan i{height:56px}}
+@media(max-width:340px){.lan{--bw:128px}}
